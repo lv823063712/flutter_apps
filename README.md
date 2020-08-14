@@ -1,4 +1,6 @@
 # flutter_apps
+这是一个flutter的项目,作为自己初学入门
+现在的marst分支上 有一个列表的初级搭建的demo
 
 A new Flutter application.
 
