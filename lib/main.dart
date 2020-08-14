@@ -38,7 +38,7 @@ class Home extends StatelessWidget {
             style: Theme.of(context).textTheme.subhead,
           ),
           SizedBox(
-            height: 16.0,
+            height: 16.0 ,
           )
         ],
       ),
