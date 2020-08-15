@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_apps/demo/DrawerDemo.dart';
+import 'package:flutter_apps/demo/LayoutDemo.dart';
 
 import 'demo/BasicDemo.dart';
 import 'demo/BottomNavigatpionBarDemo.dart';
@@ -76,11 +77,7 @@ class Home extends StatelessWidget {
           children: <Widget>[
             ListViews(),
             BasicDemo(),
-            Icon(
-              Icons.satellite,
-              size: 99.0,
-              color: Colors.red,
-            ),
+            LayoutDemo(),
           ],
         ),
         drawer: DrawerDemo(),
