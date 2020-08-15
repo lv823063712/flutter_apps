@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_apps/demo/DrawerDemo.dart';
 
+import 'demo/BasicDemo.dart';
 import 'demo/BottomNavigatpionBarDemo.dart';
 import 'demo/listview_demo.dart';
 import 'moudle/post.dart';
@@ -74,11 +75,7 @@ class Home extends StatelessWidget {
         body: TabBarView(
           children: <Widget>[
             ListViews(),
-            Icon(
-              Icons.cake,
-              size: 99.0,
-              color: Colors.red,
-            ),
+            BasicDemo(),
             Icon(
               Icons.satellite,
               size: 99.0,
