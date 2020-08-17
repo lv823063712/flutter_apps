@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_apps/moudle/post.dart';
@@ -7,7 +6,88 @@ class ViewDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return PageViewBuilderDemo();
+    return GridViewBilderDemo();
+  }
+}
+
+class GridViewBilderDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return GridView.builder(
+      padding: EdgeInsets.all(8.0),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3, crossAxisSpacing: 6.0, mainAxisSpacing: 6.0),
+      itemBuilder: _gridViewBuilder,
+      itemCount: posts.length,
+    );
+  }
+
+  Widget _gridViewBuilder(BuildContext context, int index) {
+    return Container(
+      child: Image.network(
+        posts[index].imageUrl,
+        fit: BoxFit.cover,
+      ),
+    );
+  }
+}
+
+//在GridView中动态的添加多少条数据,类似于for循环
+class GridViewCountDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return GridView.count(
+      crossAxisCount: 3, //count里面特有的属性,设定展示几列
+      crossAxisSpacing: 6.0, //纵向分隔距离
+      mainAxisSpacing: 6.0, //横向分隔距离
+//      scrollDirection: Axis.horizontal,//改变株洲会改变视图
+      children: _builderTitls(100),
+    );
+  }
+
+  //动态添加控件
+  List<Widget> _builderTitls(int length) {
+    return List.generate(length, (int index) {
+      return Container(
+        color: Colors.grey[300],
+        alignment: Alignment(0.0, 0.0),
+        child: Text(
+          'item$index',
+          style: TextStyle(fontSize: 18.0, color: Colors.grey),
+        ),
+      );
+    });
+    ;
+  }
+}
+
+class GridViewExtentDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return GridView.extent(
+        crossAxisSpacing: 6.0, //纵向分隔距离
+        mainAxisSpacing: 6.0, //横向分隔距离
+//      scrollDirection: Axis.horizontal,//改变主轴会改变视图
+        children: _builderTitls(100),
+        maxCrossAxisExtent: 150.0);
+  }
+
+  //动态添加控件
+  List<Widget> _builderTitls(int length) {
+    return List.generate(length, (int index) {
+      return Container(
+        color: Colors.grey[300],
+        alignment: Alignment(0.0, 0.0),
+        child: Text(
+          'item$index',
+          style: TextStyle(fontSize: 18.0, color: Colors.grey),
+        ),
+      );
+    });
+    ;
   }
 }
 
