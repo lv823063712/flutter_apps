@@ -5,6 +5,7 @@ import 'package:flutter_apps/demo/LayoutDemo.dart';
 
 import 'demo/BasicDemo.dart';
 import 'demo/BottomNavigatpionBarDemo.dart';
+import 'demo/ViewDemo.dart';
 import 'demo/listview_demo.dart';
 import 'moudle/post.dart';
 
@@ -35,7 +36,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return DefaultTabController(
-      length: 3,
+      length: 4,
       child: Scaffold(
         //Scaffold可以为页面提供一个基本结构
         backgroundColor: Colors.grey[100],
@@ -70,6 +71,7 @@ class Home extends StatelessWidget {
               Tab(icon: Icon(Icons.local_florist)),
               Tab(icon: Icon(Icons.cake)),
               Tab(icon: Icon(Icons.satellite)),
+              Tab(icon: Icon(Icons.view_quilt)),
             ],
           ),
         ),
@@ -78,6 +80,7 @@ class Home extends StatelessWidget {
             ListViews(),
             BasicDemo(),
             LayoutDemo(),
+            ViewDemo(),
           ],
         ),
         drawer: DrawerDemo(),
