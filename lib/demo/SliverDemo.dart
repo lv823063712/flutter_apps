@@ -8,9 +8,11 @@ class SliverDemo extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
-          SliverSafeArea(//这个属性是让sliver显示在安全的视图之内,防止出现被头部的刘海之类的遮挡
-            sliver: SliverPadding(//这个属性是增加sliver的内边距
-              padding: EdgeInsets.all(16.0),
+          SliverSafeArea(
+            //这个属性是让sliver显示在安全的视图之内,防止出现被头部的刘海之类的遮挡
+            sliver: SliverPadding(
+              //这个属性是增加sliver的内边距
+              padding: EdgeInsets.all(8.0),
               sliver: SliverListDemo(),
             ),
           )
@@ -43,17 +45,50 @@ class SliverGridDemo extends StatelessWidget {
   }
 }
 
-
 class SliverListDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverList(
       delegate: SliverChildBuilderDelegate((BuildContext context, int index) {
-        return Container(
-          child: Image.network(
-            posts[index].imageUrl,
-            fit: BoxFit.cover,
-          ),
+        return Padding(
+          padding: EdgeInsets.only(bottom: 32.0),
+          child: Material(
+              clipBehavior: Clip.hardEdge,
+              //下面的圆角属性设置不生效,可以加上这个裁剪的属性;推测原因应该是flutter版本问题
+              borderRadius: BorderRadius.circular(12.0),
+              //设置圆角
+              elevation: 14.0,
+              //设置阴影
+//            shadowColor: Colors.grey.withOpacity(0.5),
+              child: Stack(
+                children: <Widget>[
+                  AspectRatio(
+                    aspectRatio: 9 / 16, //这个属性用来设置图片的比例
+                    child: Image.network(
+                      posts[index].imageUrl,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Positioned(
+                    top: 32.0,
+                    left: 32.0,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      //这个部件类似相当于线性布局
+                      children: <Widget>[
+                        Text(
+                          posts[index].title,
+                          style: TextStyle(fontSize: 20.0, color: Colors.white),
+                        ),
+                        Text(
+                          posts[index].author,
+                          style: TextStyle(fontSize: 13.0, color: Colors.white),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              )),
         );
       }, childCount: posts.length),
     );
