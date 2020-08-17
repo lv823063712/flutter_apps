@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_apps/demo/DrawerDemo.dart';
 import 'package:flutter_apps/demo/LayoutDemo.dart';
+import 'package:flutter_apps/demo/SliverDemo.dart';
 
 import 'demo/BasicDemo.dart';
 import 'demo/BottomNavigatpionBarDemo.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: '另一个demo',
-      home: Home(),
+      home: SliverDemo(),
       theme: ThemeData(
         primaryColor: Colors.yellow, //背景主题色
         highlightColor: Color.fromRGBO(255, 255, 255, 0.5), //按下高亮色
