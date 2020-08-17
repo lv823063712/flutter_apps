@@ -2,13 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_apps/demo/DrawerDemo.dart';
 import 'package:flutter_apps/demo/LayoutDemo.dart';
+import 'package:flutter_apps/demo/NavigatorDemo.dart';
 import 'package:flutter_apps/demo/SliverDemo.dart';
 
 import 'demo/BasicDemo.dart';
 import 'demo/BottomNavigatpionBarDemo.dart';
-import 'demo/ViewDemo.dart';
 import 'demo/listview_demo.dart';
-import 'moudle/post.dart';
 
 void main() => runApp(MyApp());
 
@@ -18,8 +17,8 @@ class MyApp extends StatelessWidget {
     // TODO: implement build
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: '另一个demo',
-      home: Home(),
+      title: 'FlutterDemo',
+      home: NavigatorDemo(),
       theme: ThemeData(
         primaryColor: Colors.yellow, //背景主题色
         highlightColor: Color.fromRGBO(255, 255, 255, 0.5), //按下高亮色
@@ -31,8 +30,6 @@ class MyApp extends StatelessWidget {
 
 //home小控件
 class Home extends StatelessWidget {
-
-  
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
