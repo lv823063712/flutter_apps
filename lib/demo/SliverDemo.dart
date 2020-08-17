@@ -17,7 +17,7 @@ class SliverDemo extends StatelessWidget {
             //单独使用这个属性,相当于占用了178个高度,但是向上滑动时会类似于支付宝上的metailral动画效果
             flexibleSpace: FlexibleSpaceBar(
               title: Text(
-                'lvfei flutter'.toUpperCase(),
+                'lvfei Flutter'.toUpperCase(),
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 15.0,
