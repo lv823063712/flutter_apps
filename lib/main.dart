@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: '另一个demo',
-      home: SliverDemo(),
+      home: Home(),
       theme: ThemeData(
         primaryColor: Colors.yellow, //背景主题色
         highlightColor: Color.fromRGBO(255, 255, 255, 0.5), //按下高亮色
@@ -81,7 +81,7 @@ class Home extends StatelessWidget {
             ListViews(),
             BasicDemo(),
             LayoutDemo(),
-            ViewDemo(),
+            SliverDemo(),
           ],
         ),
         drawer: DrawerDemo(),
