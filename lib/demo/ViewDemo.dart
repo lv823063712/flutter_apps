@@ -5,7 +5,6 @@ import 'package:flutter_apps/moudle/post.dart';
 class ViewDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return GridViewBilderDemo();
   }
 }
@@ -13,7 +12,6 @@ class ViewDemo extends StatelessWidget {
 class GridViewBilderDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return GridView.builder(
       padding: EdgeInsets.all(8.0),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -37,7 +35,6 @@ class GridViewBilderDemo extends StatelessWidget {
 class GridViewCountDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return GridView.count(
       crossAxisCount: 3, //count里面特有的属性,设定展示几列
       crossAxisSpacing: 6.0, //纵向分隔距离
@@ -95,7 +92,6 @@ class GridViewExtentDemo extends StatelessWidget {
 class PageViewBuilderDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return PageView.builder(
       itemCount: posts.length, //接入数据的下标
       itemBuilder: _pageItemBuilder,
@@ -137,7 +133,6 @@ class PageViewBuilderDemo extends StatelessWidget {
 class ViewPageDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return PageView(
 //      pageSnapping: false,//这个参数去除阻尼效果,随意拖动
 //      reverse: true,//这个参数用来设定几个页面的排序,true为倒叙,false为正序
