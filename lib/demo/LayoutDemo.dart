@@ -9,16 +9,21 @@ class LayoutDemo extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center, //设置是否均匀分布空间
 //        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          ConstrainedBox(
-            constraints:BoxConstraints(
-              minHeight: 200.0,
-              maxWidth: 200.0
-            ),
-            child: Container(
-              color: Color.fromRGBO(3, 54, 255, 1.0),
-            ),
-          )
+          StackDemo()
         ],
+      ),
+    );
+  }
+}
+
+class ConstrainedBoxDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return ConstrainedBox(
+      constraints: BoxConstraints(minHeight: 200.0, maxWidth: 200.0),
+      child: Container(
+        color: Color.fromRGBO(3, 54, 255, 1.0),
       ),
     );
   }
