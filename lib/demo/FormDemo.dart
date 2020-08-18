@@ -88,10 +88,10 @@ class _RegisterFormState extends State<RegisterForm> {
   Widget build(BuildContext context) {
     return Form(
         key: registerFromKey,
-        child: Column(
+        child: Column(//相当于线性布局
           children: <Widget>[
             TextFormField(
-              decoration:
+              decoration://账户提示名
                   InputDecoration(labelText: "UserName", helperText: ''),
               onSaved: (value) {
                 userName = value;
@@ -99,10 +99,9 @@ class _RegisterFormState extends State<RegisterForm> {
               validator: validateUserName,
               autovalidate: autovalidate,
             ),
-            TextFormField(
-              obscureText: true,
-              //输入密码时候为true显示小圆点
-              decoration:
+            TextFormField(//这个是使用输入款控件
+              obscureText: true, //输入密码时候为true显示小圆点
+              decoration://下面是密码提示名
                   InputDecoration(labelText: "PassWord", helperText: ''),
               onSaved: (value) {
                 password = value;
@@ -110,25 +109,25 @@ class _RegisterFormState extends State<RegisterForm> {
               validator: validatePassWord,
               autovalidate: autovalidate,
             ),
-            SizedBox(
+            SizedBox(//使用sizeBox增加一些间距
               height: 32.0,
             ),
             Container(
               width: double.infinity,
-              child: RaisedButton(
-                color: Theme.of(context).accentColor,
+              child: RaisedButton(//注册按钮
+                color: Theme.of(context).accentColor,//设定注册按钮的主题色
                 child: Text(
                   '注册',
                   style: TextStyle(color: Colors.white),
                 ),
                 elevation: 0.0,
-                onPressed: submitRegisterForm,
+                onPressed: submitRegisterForm,//事件回调方法
               ),
             )
           ],
         ));
   }
-
+  //表单提交方法
   void submitRegisterForm() {
     if (registerFromKey.currentState.validate()) {
       registerFromKey.currentState.save(); //保存from表单里面保存的数据
@@ -144,7 +143,7 @@ class _RegisterFormState extends State<RegisterForm> {
     }
   }
 }
-
+//定义主题
 class ThemeDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
