@@ -32,7 +32,8 @@ class PostShow extends StatelessWidget {
                 Text(post.title,style: Theme.of(context).textTheme.title,),
                 Text(post.author,style: Theme.of(context).textTheme.subhead,),
                 SizedBox(height: 32.0,),
-                Text(post.description,style: Theme.of(context).textTheme.body1,),
+                Text(post.description,style: Theme.of(context).textTheme.body1,overflow: TextOverflow.ellipsis,
+                maxLines: 7,),
               ],
             ),
           )
