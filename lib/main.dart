@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_apps/demo/DrawerDemo.dart';
+import 'package:flutter_apps/demo/FormDemo.dart';
 import 'package:flutter_apps/demo/LayoutDemo.dart';
 import 'package:flutter_apps/demo/NavigatorDemo.dart';
 import 'package:flutter_apps/demo/SliverDemo.dart';
@@ -19,15 +20,17 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'FlutterDemo',
 //      home: NavigatorDemo(),
-    initialRoute: '/',//初始路由
+    initialRoute: '/form',//初始路由
       routes: {
         '/':(context) =>Home(),
-        '/about':(context)=>Page(title: 'About',)
+        '/about':(context)=>Page(title: 'About',),
+        '/form':(context)=>FormDemo(),
       },
       theme: ThemeData(
         primaryColor: Colors.yellow, //背景主题色
         highlightColor: Color.fromRGBO(255, 255, 255, 0.5), //按下高亮色
         splashColor: Colors.white70, //水波纹颜色
+        accentColor: Color.fromRGBO(3, 54, 255, 1.0)
       ), //设置主题,也就是头部的背景色之类的
     );
   }
