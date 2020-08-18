@@ -18,7 +18,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'FlutterDemo',
-      home: NavigatorDemo(),
+//      home: NavigatorDemo(),
+    initialRoute: '/',//初始路由
+      routes: {
+        '/':(context) =>Home(),
+        '/about':(context)=>Page(title: 'About',)
+      },
       theme: ThemeData(
         primaryColor: Colors.yellow, //背景主题色
         highlightColor: Color.fromRGBO(255, 255, 255, 0.5), //按下高亮色

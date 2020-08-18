@@ -17,12 +17,13 @@ class NavigatorDemo extends StatelessWidget {
               child: Text('About'),
               //这个属性是回调
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
+                Navigator.pushNamed(context, '/about');
+                /*Navigator.of(context).push(MaterialPageRoute(
                   //这个是路由跳转新页面  新页面会自带一个返回按键(在不添加的情况下)
                     builder: (BuildContext context) =>
                         Page(
                           title: 'About',
-                        )));
+                        )));*/
               },
             )
           ],

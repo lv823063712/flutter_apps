@@ -14,25 +14,43 @@ class ListViews extends StatelessWidget {
     return Container(
       color: Colors.white,
       margin: EdgeInsets.all(8.0),
-      child: Column(
+      child: Stack(
         children: <Widget>[
-          Image.network(posts[index].imageUrl),
-          SizedBox(
-            height: 16.0,
+          Column(
+            children: <Widget>[
+              AspectRatio(
+                aspectRatio: 9/13,
+                child:Image.network(posts[index].imageUrl,fit: BoxFit.cover,),
+              ),
+              SizedBox(
+                height: 16.0,
+              ),
+              Text(
+                posts[index].title,
+                style: Theme.of(context).textTheme.title,
+              ),
+              Text(
+                posts[index].author,
+                style: Theme.of(context).textTheme.subhead,
+              ),
+              SizedBox(
+                height: 16.0,
+              )
+            ],
           ),
-          Text(
-            posts[index].title,
-            style: Theme.of(context).textTheme.title,
-          ),
-          Text(
-            posts[index].author,
-            style: Theme.of(context).textTheme.subhead,
-          ),
-          SizedBox(
-            height: 16.0,
-          )
+          Positioned.fill(child: Material(
+            color: Colors.transparent,//透明色
+            child: InkWell(//增加一个溅墨效果
+              splashColor: Colors.white.withOpacity(0.3),
+              highlightColor: Colors.white.withOpacity(0.1),
+              onTap: (){//点击回调
+                debugPrint('嗯哼');
+              },
+
+            ),
+          ))
         ],
-      ),
+      )
     );
   }
 }
