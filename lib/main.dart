@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_apps/demo/DrawerDemo.dart';
 import 'package:flutter_apps/demo/FormDemo.dart';
 import 'package:flutter_apps/demo/LayoutDemo.dart';
+import 'package:flutter_apps/demo/MaterialComponents.dart';
 import 'package:flutter_apps/demo/NavigatorDemo.dart';
 import 'package:flutter_apps/demo/SliverDemo.dart';
 
@@ -20,11 +21,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'FlutterDemo',
 //      home: NavigatorDemo(),
-    initialRoute: '/form',//初始路由
+    initialRoute: '/mdc',//初始路由
       routes: {
         '/':(context) =>Home(),
         '/about':(context)=>Page(title: 'About',),
         '/form':(context)=>FormDemo(),
+        '/mdc':(context)=>MaterialComponents(),
       },
       theme: ThemeData(
         primaryColor: Colors.yellow, //背景主题色
