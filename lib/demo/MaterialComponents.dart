@@ -7,6 +7,7 @@ import 'package:flutter_apps/demo/SwitchDemo.dart';
 
 import 'ButtonDemo.dart';
 import 'CheckboxDemo.dart';
+import 'DataTimeDemo.dart';
 import 'FloatingActionButtonDemo.dart';
 
 class MaterialComponents extends StatelessWidget {
@@ -19,6 +20,7 @@ class MaterialComponents extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(title: 'DataTime', page: DataTimeDemo()),
           ListItem(title: 'SliderValue', page: SliderDemo()),
           ListItem(title: 'SwitchDemo', page: SwitchDemo()),
           ListItem(title: 'RadioDemo', page: RadioDemo()),
