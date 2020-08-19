@@ -21,10 +21,30 @@ class _RadioDemoState extends State<RadioDemo> {
           //设定一个线性布局
           mainAxisAlignment: MainAxisAlignment.center, //让部件垂直居中
           children: <Widget>[
+            Text('RadioGroupValue $_radioGroupA'),
+            SizedBox(height: 32.0,),
+            RadioListTile(
+              value: 0,
+              groupValue: _radioGroupA,
+              onChanged: _handleRadioValueChanged,
+              title: Text('Options A'),
+              subtitle: Text('我是副标题'),
+              secondary: Icon(Icons.filter_1),
+              selected: _radioGroupA == 0,
+            ),
+            RadioListTile(
+              value: 1,
+              groupValue: _radioGroupA,
+              onChanged: _handleRadioValueChanged,
+              title: Text('Options B'),
+              subtitle: Text('我是副标题'),
+              secondary: Icon(Icons.filter_2),
+              selected: _radioGroupA == 1,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center, //设定部件水平居中
               children: <Widget>[
-                Radio(
+                /*Radio(
                   value: 0, //单个值
                   groupValue: _radioGroupA, //群组值
                   onChanged: _handleRadioValueChanged, //方法
@@ -35,7 +55,7 @@ class _RadioDemoState extends State<RadioDemo> {
                   groupValue: _radioGroupA, //群组值
                   onChanged: _handleRadioValueChanged, //方法
                   activeColor: Colors.black,
-                ),
+                ),*/
               ],
             ),
           ],
