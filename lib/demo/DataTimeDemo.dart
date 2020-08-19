@@ -8,13 +8,15 @@ class DataTimeDemo extends StatefulWidget {
 
 class _DataTimeDemoState extends State<DataTimeDemo> {
   DateTime selectedData = DateTime.now(); //设定时间等于现在
+  TimeOfDay selectedTime = TimeOfDay(hour: 9, minute: 00);
+
   _selectDate() async {
     final DateTime selectDate = await showDatePicker(
         context: context,
         initialDate: selectedData,
         firstDate: DateTime(1900),
         lastDate: DateTime(2100));
-    if (selectDate==null) {
+    if (selectDate == null) {
       return;
     }
     setState(() {
@@ -22,11 +24,22 @@ class _DataTimeDemoState extends State<DataTimeDemo> {
     });
   }
 
+  _selectTime() async {
+    final TimeOfDay time =
+        await showTimePicker(context: context, initialTime: selectedTime);
+    if (time == null) {
+      return;
+    }
+    setState(() {
+      selectedTime = time;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('_WidgetDemo'),
+        title: Text('DateTimeDemo'),
         elevation: 0.0,
       ),
       body: Container(
@@ -46,7 +59,16 @@ class _DataTimeDemoState extends State<DataTimeDemo> {
                       Icon(Icons.arrow_drop_down)
                     ],
                   ),
-                )
+                ),
+                InkWell(
+                  onTap: _selectTime,
+                  child: Row(
+                    children: <Widget>[
+                      Text(selectedTime.format(context)),
+                      Icon(Icons.arrow_drop_down)
+                    ],
+                  ),
+                ),
               ],
             ),
           ],
