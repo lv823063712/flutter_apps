@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_apps/demo/FormDemo.dart';
 import 'package:flutter_apps/demo/PopupMenuButtonDemo.dart';
 
 import 'ButtonDemo.dart';
+import 'CheckboxDemo.dart';
 import 'FloatingActionButtonDemo.dart';
 
 class MaterialComponents extends StatelessWidget {
@@ -14,6 +16,8 @@ class MaterialComponents extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(title: 'Checkbox', page: CheckboxDemo()),
+          ListItem(title: 'Form', page: FormDemo()),
           ListItem(title: 'FloatingActionButton', page: FloatingActionButtonDemo()),
           ListItem(title: 'PopupMenuButton', page: PopupMenuButtonDemo()),
           ListItem(
