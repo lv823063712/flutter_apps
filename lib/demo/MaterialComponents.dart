@@ -6,6 +6,7 @@ import 'package:flutter_apps/demo/PopupMenuButtonDemo.dart';
 import 'package:flutter_apps/demo/RadioDemo.dart';
 import 'package:flutter_apps/demo/SimpleDialogDemo.dart';
 import 'package:flutter_apps/demo/SliderDemo.dart';
+import 'package:flutter_apps/demo/SnackBarDemo.dart';
 import 'package:flutter_apps/demo/SwitchDemo.dart';
 
 import 'ButtonDemo.dart';
@@ -23,6 +24,7 @@ class MaterialComponents extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(title: 'SnackBar', page: SnackBarDemo()),
           ListItem(title: 'BottomSheet', page: BottomSheetDemo()),
           ListItem(title: 'AlertDialog', page: AlertDialogDemo()),
           ListItem(title: 'SimpleDialog', page: SimpleDialogDemo()),
