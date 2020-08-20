@@ -27,7 +27,7 @@ class _ChipDemoState extends State<ChipDemo> {
             Wrap(
               spacing: 8.0,
               children: <Widget>[
-                Chip(label: Text('lift')),
+                Chip(label: Text('life')),
                 Chip(
                   label: Text('sunset'),
                   backgroundColor: Colors.orange,
