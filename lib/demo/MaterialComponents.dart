@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_apps/demo/AlertDialogDemo.dart';
 import 'package:flutter_apps/demo/BottomSheetDemo.dart';
+import 'package:flutter_apps/demo/ChipDemo.dart';
 import 'package:flutter_apps/demo/ExpansionPanelDemo.dart';
 import 'package:flutter_apps/demo/FormDemo.dart';
 import 'package:flutter_apps/demo/PopupMenuButtonDemo.dart';
@@ -25,6 +26,7 @@ class MaterialComponents extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(title: 'Chip', page: ChipDemo()),
           ListItem(title: 'ExpansionPanel', page: ExpansionPanelDemo()),
           ListItem(title: 'SnackBar', page: SnackBarDemo()),
           ListItem(title: 'BottomSheet', page: BottomSheetDemo()),

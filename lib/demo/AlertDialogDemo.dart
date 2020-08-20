@@ -20,7 +20,7 @@ class _AlertDialogDemoState extends State<AlertDialogDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('_WidgetDemo'),
+        title: Text('AlertDialogDemo'),
         elevation: 0.0,
       ),
       body: Container(

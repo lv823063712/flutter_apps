@@ -15,7 +15,7 @@ class _SnackBarDemoState extends State<SnackBarDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('_WidgetDemo'),
+        title: Text('SnackBarDemo'),
         elevation: 0.0,
       ),
       body: Container(
