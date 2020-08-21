@@ -12,7 +12,7 @@ class ChipDemo extends StatefulWidget {
 
 class _ChipDemoState extends State<ChipDemo> {
   List<String> _tag = ['iPhone', 'HUAWEI', 'ZTE', 'Lenovo','OPPO','VIVO','XIAOMI'];
-
+  String _action = 'Nothing';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,6 +73,27 @@ class _ChipDemoState extends State<ChipDemo> {
                         onDeleted: (){
                           setState(() {
                             _tag.remove(tag);
+                          });
+                        },
+                      );
+                    },
+                  ).toList(),
+                ) ,
+                Divider(
+                  height: 32.0,
+                  indent: 32.0, //缩进
+                  color: Colors.grey,
+                ), //这是一个分隔符会显示成一条直线
+                Container(width: double.infinity,child: Text('ActionChip:$_action'),),
+                Wrap(
+                  spacing: 8.0,
+                  children: _tag.map(
+                    (tag) {
+                      return ActionChip(
+                        label: Text(tag),
+                        onPressed: (){
+                          setState(() {
+                            _action = tag;
                           });
                         },
                       );
