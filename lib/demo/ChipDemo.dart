@@ -14,6 +14,7 @@ class _ChipDemoState extends State<ChipDemo> {
   List<String> _tag = ['iPhone', 'HUAWEI', 'ZTE', 'Lenovo','OPPO','VIVO','XIAOMI'];
   String _action = 'Nothing';
   List<String> _selected = [];
+  String _choice = 'HUAWEI';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -127,6 +128,29 @@ class _ChipDemoState extends State<ChipDemo> {
                     },
                   ).toList(),
                 ),
+                Divider(
+                  height: 32.0,
+                  indent: 32.0, //缩进
+                  color: Colors.grey,
+                ), //这是一个分隔符会显示成一条直线
+                Container(width: double.infinity,child: Text('ChoiceChip:${_choice}'),),
+                Wrap(
+                  spacing: 8.0,
+                  children: _tag.map(
+                    (tag) {
+                      return ChoiceChip(
+                        label: Text(tag),
+                        selectedColor: Colors.red,
+                        selected: _choice == tag,
+                        onSelected: (value){
+                          setState(() {
+                            _choice = tag;
+                          });
+                        },
+                      );
+                    },
+                  ).toList(),
+                ),
               ],
             ),
           ],
@@ -138,6 +162,7 @@ class _ChipDemoState extends State<ChipDemo> {
           setState(() {
             _tag = ['iPhone', 'HUAWEI', 'ZTE', 'Lenovo','OPPO','VIVO','XIAOMI'];
             _selected = [];
+            _choice = 'HUAWEI';
           });
         },
       ),
