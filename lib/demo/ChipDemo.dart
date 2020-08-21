@@ -13,6 +13,7 @@ class ChipDemo extends StatefulWidget {
 class _ChipDemoState extends State<ChipDemo> {
   List<String> _tag = ['iPhone', 'HUAWEI', 'ZTE', 'Lenovo','OPPO','VIVO','XIAOMI'];
   String _action = 'Nothing';
+  List<String> _selected = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,7 +100,33 @@ class _ChipDemoState extends State<ChipDemo> {
                       );
                     },
                   ).toList(),
-                )
+                ),
+                Divider(
+                  height: 32.0,
+                  indent: 32.0, //缩进
+                  color: Colors.grey,
+                ), //这是一个分隔符会显示成一条直线
+                Container(width: double.infinity,child: Text('FilterChip:${_selected.toString()}'),),
+                Wrap(
+                  spacing: 8.0,
+                  children: _tag.map(
+                    (tag) {
+                      return FilterChip(
+                        label: Text(tag),
+                        selected: _selected.contains(tag),
+                        onSelected: (value){
+                          setState(() {
+                            if (_selected.contains(tag)) {
+                              _selected.remove(tag);
+                            }  else{
+                              _selected.add(tag);
+                            }
+                          });
+                        },
+                      );
+                    },
+                  ).toList(),
+                ),
               ],
             ),
           ],
@@ -110,6 +137,7 @@ class _ChipDemoState extends State<ChipDemo> {
         onPressed: (){
           setState(() {
             _tag = ['iPhone', 'HUAWEI', 'ZTE', 'Lenovo','OPPO','VIVO','XIAOMI'];
+            _selected = [];
           });
         },
       ),
