@@ -6,6 +6,7 @@ import 'package:flutter_apps/demo/LayoutDemo.dart';
 import 'package:flutter_apps/demo/MaterialComponents.dart';
 import 'package:flutter_apps/demo/NavigatorDemo.dart';
 import 'package:flutter_apps/demo/SliverDemo.dart';
+import 'package:flutter_apps/demo/state/StateManagementDemo.dart';
 
 import 'demo/BasicDemo.dart';
 import 'demo/BottomNavigatpionBarDemo.dart';
@@ -21,12 +22,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'FlutterDemo',
 //      home: NavigatorDemo(),
-    initialRoute: '/mdc',//初始路由
+    initialRoute: '/state-management',//初始路由
       routes: {
         '/':(context) =>Home(),
         '/about':(context)=>Page(title: 'About',),
         '/form':(context)=>FormDemo(),
         '/mdc':(context)=>MaterialComponents(),
+        '/state-management':(context)=>StateManagementDemo(),
       },
       theme: ThemeData(
         primaryColor: Colors.yellow, //背景主题色
