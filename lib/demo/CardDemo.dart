@@ -5,7 +5,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_apps/moudle/post.dart';
-import 'package:http/http.dart';
 
 class CardDemo extends StatefulWidget {
   @override

@@ -18,6 +18,7 @@ import 'CheckboxDemo.dart';
 import 'DataTimeDemo.dart';
 import 'FloatingActionButtonDemo.dart';
 import 'PageinatedDataTableDemo.dart';
+import 'StepperDemo.dart';
 
 class MaterialComponents extends StatelessWidget {
   @override
@@ -29,7 +30,8 @@ class MaterialComponents extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
-          ListItem(title: 'CardDemo', page: CardDemo()),
+          ListItem(title: 'Stepper', page: StepperDemo()),
+          ListItem(title: 'Card', page: CardDemo()),
           ListItem(title: 'PageinatedDataTable', page: PageinatedDataTableDemo()),
           ListItem(title: 'DataTable', page: DataTableDemo()),
           ListItem(title: 'Chip', page: ChipDemo()),
