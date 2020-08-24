@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_apps/demo/AlertDialogDemo.dart';
 import 'package:flutter_apps/demo/BottomSheetDemo.dart';
+import 'package:flutter_apps/demo/CardDemo.dart';
 import 'package:flutter_apps/demo/ChipDemo.dart';
 import 'package:flutter_apps/demo/DataTableDemo.dart';
 import 'package:flutter_apps/demo/ExpansionPanelDemo.dart';
@@ -28,6 +29,7 @@ class MaterialComponents extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(title: 'CardDemo', page: CardDemo()),
           ListItem(title: 'PageinatedDataTable', page: PageinatedDataTableDemo()),
           ListItem(title: 'DataTable', page: DataTableDemo()),
           ListItem(title: 'Chip', page: ChipDemo()),
