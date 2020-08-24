@@ -1,5 +1,5 @@
 class Post {
-  const Post({
+  Post({
     this.title,
     this.author,
     this.imageUrl,
@@ -10,6 +10,9 @@ class Post {
   final String author;
   final String imageUrl;
   final String description;
+
+
+  bool selected = false;
 }
 
 final List<Post> posts = [
@@ -86,7 +89,7 @@ final List<Post> posts = [
     imageUrl: 'https://gank.io/images/95ddb01b6bd34a85aedfda4c9e9bd003',
   ),
   Post(
-    title: '卜算子·我住长江头',
+    title: '卜算子',
     author: '李之仪',
     description: '我住长江头，君住长江尾。\n日日思君不见君，共饮长江水。\n此水几时休，此恨何时已。\n只愿君心似我心，定不负相思意。',
     imageUrl: 'https://gank.io/images/5fe5b1e9168d4a8a8f6f4e0acefef8f5',
@@ -98,7 +101,7 @@ final List<Post> posts = [
     imageUrl: 'https://gank.io/images/f7b320f1a89a4aaebadb1922c2a7a368',
   ),
   Post(
-    title: '摸鱼儿·雁丘词',
+    title: '摸鱼儿',
     author: '元好问',
     description: '问世间，情为何物，直教生死相许？天南地北双飞客，老翅几回寒暑！欢乐趣，离别苦，就中更有痴儿女。君应有语：渺万里层云，千山暮雪，只影向谁去！横汾路，寂寞当年箫鼓，荒烟依旧平楚。招魂楚些何嗟及，山鬼暗啼风雨。天也妒，未信与，莺儿燕子俱黄土。千秋万古，为留待骚人，狂歌痛饮，来访雁丘处。',
     imageUrl: 'https://gank.io/images/b25e97747ed041fbb7a11f59f7fed5da',
